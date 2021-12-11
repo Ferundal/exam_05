@@ -12,11 +12,12 @@ protected:
 	std::string effects;
 public:
 	ASpell();
-	ASpell(ASpell &origin);
-	ASpell &operator = (ASpell &origin);
-	~ASpell();
+	ASpell(const ASpell &origin);
+	ASpell &operator = (const ASpell &origin);
+	virtual ~ASpell();
 	const std::string getName() const;
 	const std::string getEffects() const;
+	virtual ASpell *clone() const = 0;
 };
 
 

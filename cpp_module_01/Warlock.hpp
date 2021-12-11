@@ -7,13 +7,19 @@
 
 #include <string>
 #include <iostream>
+#include <vector>
+
+
+#include "ASpell.hpp"
+#include "ATarget.hpp"
 
 class Warlock {
 private:
 	std::string name;
 	std::string title;
+	std::vector<ASpell *> spells;
 	Warlock();
-	Warlock(Warlock &origin);
+	Warlock(const Warlock &origin);
 	Warlock &operator =(const Warlock &origin);
 public:
 
@@ -23,6 +29,10 @@ public:
 	const std::string &getTitle() const;
 	void setTitle(const std::string newTitle);
 	void introduce() const;
+
+	void learnSpell(const ASpell *spell);
+	void forgetSpell(const std::string spell);
+	void launchSpell(const std::string spell, const ATarget &target) const;
 };
 
 

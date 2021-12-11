@@ -13,7 +13,7 @@ private:
 	std::string name;
 	std::string title;
 	Warlock();
-	Warlock(Warlock &origin);
+	Warlock(const Warlock &origin);
 	Warlock &operator =(const Warlock &origin);
 public:
 

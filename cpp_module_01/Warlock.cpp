@@ -27,3 +27,29 @@ void Warlock::setTitle(const std::string newTitle) {
 void Warlock::introduce() const {
 	std::cout << name << ": I am " << name <<", " << title << "!" <<std::endl;
 }
+
+void Warlock::learnSpell(const ASpell *spell) {
+	spells.push_back(spell);
+}
+
+void Warlock::forgetSpell(const std::string spell) {
+	std::vector<ASpell>::iterator curr = spells.begin();
+	while (curr != spells.end()) {
+		if (curr->getName() == spell) {
+			spells.erase(curr);
+			return;
+		}
+		curr++;
+	}
+}
+
+void Warlock::launchSpell(const std::string spell, const ATarget &target) const {
+	std::vector<ASpell>::const_iterator curr = spells.begin();
+	while (curr != spells.end()) {
+		if (curr->getName() == spell) {
+			target.getHitBySpell(*curr);
+			return;
+		}
+		curr++;
+	}
+}

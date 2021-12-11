@@ -41,6 +41,10 @@ INC_HEADERS_FORMAT=	-I ${dir ${HEADERS}}
 INC_HEADERS_DIR=	${foreach HEADERS, ${HEADERS}, ${INC_HEADERS_FORMAT}}
 
 SRCS_CPP=			Warlock.cpp \
+					ASpell.cpp \
+					ATarget.cpp \
+					Dummy.cpp \
+					Fwoosh.cpp \
 					test_01.cpp
 
 SRCS_CPP_BONUS=
