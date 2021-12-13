@@ -29,27 +29,13 @@ void Warlock::introduce() const {
 }
 
 void Warlock::learnSpell(const ASpell *spell) {
-	spells.push_back(spell);
+	book.learnSpell(spell);
 }
 
 void Warlock::forgetSpell(const std::string spell) {
-	std::vector<const ASpell *>::iterator curr = spells.begin();
-	while (curr != spells.end()) {
-		if ((*curr)->getName() == spell) {
-			spells.erase(curr);
-			return;
-		}
-		curr++;
-	}
+	book.forgetSpell(spell);
 }
 
 void Warlock::launchSpell(const std::string spell, const ATarget &target) const {
-	std::vector<const ASpell *>::const_iterator curr = spells.begin();
-	while (curr != spells.end()) {
-		if ((*curr)->getName() == spell) {
-			target.getHitBySpell(**curr);
-			return;
-		}
-		curr++;
-	}
+	book.launchSpell(spell, target);
 }

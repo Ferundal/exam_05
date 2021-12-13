@@ -40,7 +40,17 @@ INC_HEADERS_FORMAT=	-I ${dir ${HEADERS}}
 
 INC_HEADERS_DIR=	${foreach HEADERS, ${HEADERS}, ${INC_HEADERS_FORMAT}}
 
-SRCS_CPP=			megaphone.cpp
+SRCS_CPP=			Warlock.cpp \
+					ASpell.cpp \
+					ATarget.cpp \
+					Dummy.cpp \
+					Fwoosh.cpp \
+					Fireball.cpp \
+					Polymorph.cpp \
+					BrickWall.cpp \
+					SpellBook.cpp \
+					TargetGenerator.cpp \
+					test_02.cpp
 
 SRCS_CPP_BONUS=
 
@@ -50,7 +60,7 @@ endif
 
 OBJS_CPP=				${SRCS_CPP:.cpp=.o}
 
-NAME=				megaphone
+NAME=				test_02
 
 CC=					clang++
 RM=					rm -f

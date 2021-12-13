@@ -45,6 +45,7 @@ SRCS_CPP=			Warlock.cpp \
 					ATarget.cpp \
 					Dummy.cpp \
 					Fwoosh.cpp \
+					SpellBook.cpp \
 					test_01.cpp
 
 SRCS_CPP_BONUS=
